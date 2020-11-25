@@ -31,7 +31,16 @@
 
                 <div class="orginal-title"><span>Titolo orginale:</span> {{movie.original_title}}</div>
 
-                <div class="orginal-language"><span>Lingua originale:</span> {{movie.original_language}}</div>
+                <div class="orginal-language">
+                    <span>Lingua originale: 
+                        <span v-if="movie.original_language === 'it' || movie.original_language === 'en' ">
+                            <img :src="`./images/${movie.original_language}.png`" alt="original language"> 
+                        </span>
+                        <span v-else>
+                            {{movie.original_language}}
+                        </span>
+                    </span> 
+                </div>
 
                 <div class="vote">
                     <span>Voto:</span>
