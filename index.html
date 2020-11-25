@@ -19,10 +19,16 @@
                     name="searchbar" 
                     id="searchbar"
                     v-model="search"
-                    @keyup.enter="filterMovie()"
-                    @keyup.enter="filterTVshow()"> 
-            <button @click="filterMovie()">vai
+                    @keyup.enter="filterMovie(); filterTvShow()"
+                    > 
+            <button
+             @click="filterMovie();"
+             
+            >
+            vai
+            
             </button>
+
         </div>
 
         <div v-for="movie in movies" class="movie-list">
@@ -54,8 +60,9 @@
 
        
        
-
-
+    <div v-for="show in shows" class="tv-shows">
+        {{show.name}}
+    </div>
   
      
 
