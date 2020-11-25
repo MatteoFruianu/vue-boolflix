@@ -2,17 +2,20 @@
     padding-bottom: 10px;
 }
 
-.movie-id {
+.movie-id,
+.show-id {
     padding: 20px;
     
     margin-bottom: 20px;
 }
 
-.movie-id div span {
+.movie-id div span,
+.show-id div span {
     font-weight: bold;
 }
 
-.movie-id div span img {
+.movie-id div span img,
+.show-id div span img {
     
     height: 16px;
 }

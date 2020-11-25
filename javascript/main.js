@@ -44,7 +44,7 @@ const app = new Vue ({
         })
         .then(response => {
           this.shows = response.data.results;
-          // this.showVote = response.data.results.vote_average;
+          this.showVote = response.data.results.vote_average;
           console.log(response.data.results)
         })
         .catch(error => {

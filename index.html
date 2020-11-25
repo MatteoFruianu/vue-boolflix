@@ -61,7 +61,31 @@
        
        
     <div v-for="show in shows" class="tv-shows">
-        {{show.name}}
+        <div class="show-id">
+                
+            <div class="title"><span>Titolo:</span> {{show.name}}</div>
+
+            <div class="orginal-title"><span>Titolo orginale:</span> {{show.original_name}}</div>
+
+            <div class="orginal-language">
+                <span>Lingua originale: 
+                    <span v-if="show.original_language === 'it' || show.original_language === 'en' ">
+                        <img :src="`./images/${show.original_language}.png`" alt="original language"> 
+                    </span>
+                    <span v-else>
+                        {{show.original_language}}
+                    </span>
+                </span> 
+            </div>
+
+            <div class="vote">
+                <span>Voto:</span>
+                 <i v-for="n in getVote(show.vote_average)"  class="fas fa-star"></i>
+                 <i v-for="n in 5 - getVote(show.vote_average)"  class="far fa-star"></i>
+            </div>
+
+
+        </div>
     </div>
   
      
