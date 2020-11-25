@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue-boolflix</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+    <div id="app">
+
+        <div class="input-area">
+            <input type="text" 
+                    placeholder="inserisci un titolo" 
+                    name="searchbar" 
+                    id="searchbar"
+                    v-model="search"> 
+            <button @click="filterMovie()">vai
+            </button>
+        </div>
+
+        <div v-for="movie in movies" class="movie-list">
+            <div class="movie-id">
+                <div class="title">Titolo: {{movie.title}}</div>
+                <div class="orginal-title">Titolo orginale: {{movie.original_title}}</div>
+                <div class="orginal-language">Lingua originale: {{movie.original_language}}</div>
+                <div class="vote-average">Voto: {{movie.vote_average}}</div>
+            </div>
+        </div>
+
+       
+       
+
+
+  
+     
+
+    </div>
+    
+
+    <script src="./javascript/main.js"></script>
+</body>
+</html>
