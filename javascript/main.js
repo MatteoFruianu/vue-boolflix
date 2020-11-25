@@ -6,10 +6,11 @@ const app = new Vue ({
 
     data: {
 
-      movies: [], //inizializzo una variabile come array vuoto per mettere i movies ottenuti dal db
-      search: '', //v-model sulla barra di ricerca per filtrare i risultati
-     
       
+      movies: [], //inizializzo una variabile come array vuoto per mettere i movies ottenuti dal db
+      shows: [], //ne inizializzo un altro per le serie tv e faccio un'altra chiamata axios
+      search: '', //v-model sulla barra di ricerca per filtrare i risultati
+
     },
 
     methods: {
@@ -26,6 +27,27 @@ const app = new Vue ({
         .then(response => {
           this.movies = response.data.results;
           this.movieVote = response.data.results.vote_average;
+        })
+        .catch(error => {
+          console.log(error);
+        })
+        
+      },
+
+
+      filterTVshow() {
+
+        axios.get('https://api.themoviedb.org/3/search/tv?', {
+          params: {
+            api_key: '8c77d5df1eea7f2bd6be310c611fe245',
+            query: this.search,
+            language: 'it-IT'
+          }
+        })
+        .then(response => {
+          this.shows = response.data.results;
+          this.showVote = response.data.results.vote_average;
+          console.log(response)
         })
         .catch(error => {
           console.log(error);

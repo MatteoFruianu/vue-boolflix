@@ -19,7 +19,8 @@
                     name="searchbar" 
                     id="searchbar"
                     v-model="search"
-                    @keyup.enter="filterMovie()"> 
+                    @keyup.enter="filterMovie()"
+                    @keyup.enter="filterTVshow()"> 
             <button @click="filterMovie()">vai
             </button>
         </div>
