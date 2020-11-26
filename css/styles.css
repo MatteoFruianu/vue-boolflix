@@ -1,3 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #192d3c;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
 .input-area {
     padding-bottom: 10px;
 }
@@ -19,4 +31,66 @@
     
     height: 16px;
 }
+
+img.poster {
+    height: 300px;
+}
+
+
+
+/* HEADER STYLES */
+
+.header-nav {
+    background: #2b3a47;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 80px;
+}
+
+.header-nav .logo img {
+    height: 40px;
+}
+
+.header-nav .input-area input {
+    width: 300px;
+    height: 35px;
+    border-radius: 5px;
+    padding-left: 10px;
+    border: none;
+}
+
+.header-nav .input-area input:focus {
+    outline: none;
+}
+
+.poster {
+    width: 200px;
+}
+
+.movie-info {
+    width: 200px;
+}
+
+
+.movie-id,
+.show-id {
+    background: grey;
+    margin: 10px;
+    margin-bottom: 20px;
+}
+
+.container {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.movie-id {
+    display: flex;
+}
+
+
 
