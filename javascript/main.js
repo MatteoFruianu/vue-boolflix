@@ -32,6 +32,8 @@ const app = new Vue ({
         
       },
 
+      // `https://image.tmdb.org/t/p/w342/${movie.poster_path}`
+
 
       filterTvShow() {
 

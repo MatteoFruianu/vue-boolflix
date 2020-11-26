@@ -33,6 +33,15 @@
 
         <div v-for="movie in movies" class="movie-list">
             <div class="movie-id">
+
+                <div class="movie-poster">
+                    <div v-if="movie.poster_path === null">
+                        <img src="https://www.altavod.com/assets/images/poster-placeholder.png" alt="">
+                    </div>
+                    <div v-else>
+                        <img :src="`https://image.tmdb.org/t/p/w342/${movie.poster_path}`" alt="">
+                    </div>
+                </div>
                 
                 <div class="title"><span>Titolo:</span> {{movie.title}}</div>
 
@@ -62,6 +71,15 @@
        
     <div v-for="show in shows" class="tv-shows">
         <div class="show-id">
+
+            <div class="show-poster">
+                <div v-if="show.poster_path === null">
+                    <img src="https://www.altavod.com/assets/images/poster-placeholder.png" alt="">
+                </div>
+                <div v-else>
+                    <img :src="`https://image.tmdb.org/t/p/w342/${show.poster_path}`" alt="">
+                </div>
+             </div>
                 
             <div class="title"><span>Titolo:</span> {{show.name}}</div>
 
