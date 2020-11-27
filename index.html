@@ -54,7 +54,7 @@
                              <i v-for="n in 5 - getVote(movie.vote_average)"  class="far fa-star"></i>
                         </div>
     
-                        <div class="orginal-title"><span>Titolo orginale:</span> {{movie.original_title}}</div>
+                        <div class="orginal-title">{{movie.original_title}}</div>
         
                         <div class="orginal-language">
                             <span>Lingua originale: 
@@ -66,8 +66,9 @@
                                 </span>
                             </span> 
                         </div>
-        
-                        
+                    </div>
+                    <div class="layover">
+                       {{movie.overview}}
                     </div>
                 </div>
             </div>
@@ -85,10 +86,16 @@
                         <img class="poster" :src="`https://image.tmdb.org/t/p/w342/${show.poster_path}`" alt="show.name">
                     </div>
                  </div>
-                    
-                <div class="title"><span>Titolo:</span> {{show.name}}</div>
+
+                 <div class="show-info">
+                    <div class="title"><span>Titolo:</span> {{show.name}}</div>
+
+                    <div class="vote">
+                         <i v-for="n in getVote(show.vote_average)"  class="fas fa-star"></i>
+                         <i v-for="n in 5 - getVote(show.vote_average)"  class="far fa-star"></i>
+                    </div>
     
-                <div class="orginal-title"><span>Titolo orginale:</span> {{show.original_name}}</div>
+                <div class="orginal-title">{{show.original_name}}</div>
     
                 <div class="orginal-language">
                     <span>Lingua originale: 
@@ -101,10 +108,13 @@
                     </span> 
                 </div>
     
-                <div class="vote">
-                    <span>Voto:</span>
-                     <i v-for="n in getVote(show.vote_average)"  class="fas fa-star"></i>
-                     <i v-for="n in 5 - getVote(show.vote_average)"  class="far fa-star"></i>
+                
+                 </div>
+                    
+                 <div class="layover">
+                     <div class="layover-box">
+                       {{show.overview}}
+                     </div>
                 </div>
     
     
